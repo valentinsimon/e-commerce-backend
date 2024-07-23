@@ -2,11 +2,11 @@
 
 services:
   nestapp:
-    build: ./
+    build: ./back
     ports:
       - "3000:3000"
     env_file:
-      - .development.env
+      - ./back/.development.env
     depends_on:
       - postgresdb
 
@@ -15,7 +15,7 @@ services:
     volumes:
     - pgdata:/var/lib/postgresql/data
     env_file:
-      - .development.env
+      - ./back/.development.env
 
 volumes:
   pgdata:
